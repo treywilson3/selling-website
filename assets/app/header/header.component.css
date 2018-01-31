@@ -1,0 +1,55 @@
+.navbar-default {
+    background-color: #fbfbfa;
+    width: 100%;
+}
+
+/* Title */
+.navbar-default .navbar-brand{
+    color: #f3641f;
+}
+
+#link {
+    color: #f3641f;
+}
+
+.navbar-brand:hover {
+    color: #f3641f;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar {
+    min-height: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#searchButton {
+    position: relative;
+    padding: 6px 15px;
+    left: -8px;
+    border: 2px solid #f3641f;
+    background-color: #f3641f;
+    color: #fafafa;
+}
+
+#searchBar {
+    width: 80px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+#searchBar:focus {
+    width: 400px;
+}
+
+.glyphicon-shopping-cart {
+    color: #666666;
+}
+
+#userLabel {
+    color: #f3641f;
+}

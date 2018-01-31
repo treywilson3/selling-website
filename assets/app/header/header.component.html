@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <a class="navbar-brand" routerLink="/">Sell Stuff</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <form class="navbar-form navbar-left">
+    <div class="form-group">
+      <input id="searchBar" type="text" class="form-control" placeholder="Search for anything">
+      <button id="searchButton" type="submit" class="btn btn-default">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </button>
+    </div>
+  </form>
+  <div>
+    <ul class="nav navbar-nav">
+      <li id="link"><a routerLink="items">For Sale</a></li>
+    </ul>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right" style="margin-top: 7px" *ngIf="!isLoggedIn()">
+      <button type="submit" class="btn btn-success" (click)="toggleSignUp()">Sign Up</button>
+      <button type="submit" class="btn btn-primary" routerLink="/signin">Login</button>
+      <button type="submit" class="btn btn" style="margin-right: 30px">
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+      </button>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" *ngIf="isLoggedIn()" style="margin-right: 10px;">
+      <li class="dropdown" appDropdown>
+        <a class="dropdown-toggle" role="button" id="userLabel">User<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li style=cursor:pointer;><a>Profile</a></li>
+          <li style=cursor:pointer;><a routerLink="items/create-item">Sell Item</a></li>
+          <li style=cursor:pointer;><a routerLink="items">Items</a></li>
+          <li role="separator" class="divider"></li>
+          <li style=cursor:pointer;><a (click)="onLogout()">Logout</a></li>
+        </ul>
+      </li>
+      <button type="submit" class="btn btn" style="margin-right: 30px">
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+      </button>
+    </ul>
+  </div>
+</nav>
+<app-signup></app-signup>

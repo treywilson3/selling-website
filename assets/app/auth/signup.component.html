@@ -1,0 +1,94 @@
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title text-center">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="form-group col-xs-6 col-xs-offset-3">
+              <input
+                type="text"
+                class="form-control input-sm"
+                formControlName="firstName"
+                placeholder="First Name">
+            </div>
+              <div class="invalid" *ngIf="myForm.controls['firstName'].invalid
+                 && (myForm.controls['firstName'].dirty || myForm.controls['firstName'].touched)">
+                <div *ngIf="myForm.controls['firstName'].required ">
+                  First Name is required
+                </div>
+              </div>
+            <div class="form-group col-xs-6 col-xs-offset-3 pull-left">
+              <input
+                type="text"
+                class="form-control input-sm"
+                formControlName="lastName"
+                placeholder="Last Name">
+            </div>
+            <div class="invalid" *ngIf="myForm.controls['lastName'].invalid
+              && (myForm.controls['lastName'].dirty || myForm.controls['lastName'].touched)">
+              <div *ngIf="myForm.controls['lastName'].required ">
+                Last Name is required
+              </div>
+            </div>
+            <div class="form-group col-xs-6 col-xs-offset-3 pull-left">
+              <input
+                type="text"
+                class="form-control input-sm"
+                formControlName="username"
+                placeholder="Username">
+                <small id="usernameInfo" class="form-text text-muted">This is how other users will know you.</small>
+            </div>
+            <div class="invalid" *ngIf="myForm.controls['username'].invalid
+              && (myForm.controls['username'].dirty || myForm.controls['username'].touched)">
+              <div *ngIf="myForm.controls['username'].required ">
+                Username is required
+              </div>
+            </div>
+            <div class="form-group col-xs-6 col-xs-offset-3">
+              <input
+                type="email"
+                class="form-control input-sm"
+                placeholder="Email"
+                formControlName="email">
+            </div>
+            <div class="invalid" *ngIf="myForm.controls['email'].invalid
+               && (myForm.controls['email'].dirty || myForm.controls['email'].touched)">
+              <div *ngIf="myForm.controls['email'].required ">
+                Email is required
+              </div>
+              <div *ngIf="!myForm.controls['email'].pattern">
+                Email form is not valid
+              </div>
+            </div>
+            <div class="form-group col-xs-6 col-xs-offset-3">
+              <input
+                type="password"
+                class="form-control input-sm"
+                placeholder="Password"
+                formControlName="password">
+            </div>
+            <div class="invalid" *ngIf="myForm.controls['password'].invalid
+              && (myForm.controls['password'].dirty || myForm.controls['password'].touched)">
+              <div *ngIf="myForm.controls['password'].required ">
+                  Password is required
+              </div>
+            </div>
+            <div class="form-group col-xs-6 col-xs-offset-3">
+              <button
+                class="btn btn-primary"
+                type="submit"
+                [disabled]="!myForm.valid">Sign Up!
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal !-->

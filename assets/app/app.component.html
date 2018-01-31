@@ -1,0 +1,14 @@
+<!--Put app header on first outside of div so it takes up full page-->
+<!--add container and insert router outlet which angular uses to switch components-->
+<app-header></app-header>
+<app-success></app-success>
+<app-error></app-error>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<!--app error is the error modal that appears when errors occur-->
+
