@@ -1,20 +1,14 @@
-<div class="jumbotron">
+<div class="jumbotron" style="background-color: white">
   <a class="visible-xs" data-toggle="offcanvas"><i class="fa fa-lg fa-reorder"></i></a>
-  <h1>Tons of Great Items!</h1>
-  <p>Check them out!</p>
-  <small class="form-text text-muted">Want to sell something of your own? <a routerLink="create-item">Click Here!</a>
+  <h1>For Sale Items</h1>
+  <p>Look at 'em all</p>
+  <small class="form-text text-muted">Want to sell something of your own? <a routerLink="create-item">Click Here</a>
   </small>
 </div>
 <div class="row">
-  <div class="col-xs-6 col-md-3" *ngFor="let item of items">
-    <div class="thumbnail">
-
-      <a [routerLink]="['/items', item?.itemId]"><img src="{{item?.image}}"></a>
-      <div class="caption">
-        <p>{{item?.itemName}}</p>
-        <p class="text-muted">{{item?.sellerUsername}}</p>
-        <h4>${{item?.price}}</h4>
-      </div>
-    </div>
-  </div>
+    <app-item
+      class="col-xs-6 col-md-3"
+      [item]="item"
+      *ngFor="let item of items">
+    </app-item>
 </div>

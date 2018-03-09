@@ -1,0 +1,22 @@
+<div class="corners col-lg-12">
+  <div class="col-lg-8">
+    <h5 class="pull-left col-lg-2">Order# {{orderItem.orderId}}</h5>
+    <h5 class="text-muted pull-right col-lg-2">Ordered on: {{orderItem.orderDate | date}}</h5>
+    <hr class="col-lg-12">
+  </div>
+  <div class="col-lg-4 pull-right">
+    <div class="vertical col-lg-1"></div>
+    <div class="col-lg-10">
+      <h5 class="col-lg-6">Payed with:</h5>
+      <h6 class="col-lg-6">{{orderItem.payment.method}}</h6>
+      <h5 class="col-lg-6">Shipped to:</h5>
+      <h6 class="col-lg-6">{{orderItem.shipping.address}} </h6>
+      <h6 class="col-lg-6 col-lg-offset-3">{{orderItem.shipping.city}}, {{orderItem.shipping.state}} {{orderItem.shipping.zipcode}} {{orderItem.shipping.country}}</h6>
+    </div>
+  </div>
+  <app-order-item
+    class="col-lg-8"
+    [item]="item"
+    *ngFor="let item of items">
+  </app-order-item>
+</div>

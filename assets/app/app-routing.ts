@@ -5,11 +5,14 @@ import {SignupComponent} from "./auth/signup.component";
 import {SigninComponent} from "./auth/signin.component";
 import {ItemHomeComponent} from "./items/item-home.component";
 import {ITEMS_ROUTES} from "./items/items.routes";
+import {USERPROFILE_ROUTES} from "./user-profile/user-profile.routes";
+import {ItemInfoHomeComponent} from "./user-profile/item-info-home.component";
 
 
 const appRoutes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'items', component: ItemHomeComponent, children: ITEMS_ROUTES},
+  {path: 'user', component: ItemInfoHomeComponent, children: USERPROFILE_ROUTES},
   {path: 'signup', component: SignupComponent},
   {path: 'signin', component: SigninComponent},
 ];

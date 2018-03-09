@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <a class="visible-xs" data-toggle="offcanvas"><i class="fa fa-lg fa-reorder"></i></a>
+  <h1>Selling Items</h1>
+  <p>Look at 'em all</p>
+</div>
+<div class="well" *ngIf="items?.length < 1">No active items selling</div>
+<div class="row" *ngIf="items?.length > 0">
+  <app-selling-item
+    class="col-xs-6 col-md-3 col-lg-2"
+    [item]="item"
+    *ngFor="let item of items">
+  </app-selling-item>
+</div>

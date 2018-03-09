@@ -1,0 +1,8 @@
+<div class="thumbnail" style="background-color: #f5f5f1" *ngIf="item?.active">
+  <a [routerLink]="['/items', item?.itemId]"><img src="{{item?.image}}"></a>
+  <div class="caption">
+    <p>{{item?.itemName}}</p>
+    <p class="text-muted">{{item?.sellerUsername}}</p>
+    <h4>${{item?.price}}</h4>
+  </div>
+</div>

@@ -33,7 +33,6 @@ export class CreateItemComponent implements OnInit {
       this.myForm.value.image,
       active,
     );
-    console.log(item);
     this.itemService.create(item)
       .subscribe(
         data => console.log(data),

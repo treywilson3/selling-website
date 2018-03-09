@@ -1,0 +1,25 @@
+<div class="col-lg-12">
+  <div class="col-lg-12">
+    <h5 class="pull-left">{{item?.sellerUsername}}</h5>
+    <h5 class="text-muted pull-right">Contact Shop</h5>
+  </div>
+  <div class="col-lg-12">
+  <div class="thumbnail col-lg-4">
+    <a [routerLink]="['/items', item?.itemId]"><img src="{{item?.image}}"></a>
+    <div class="text-center" style="margin-top: 10px">
+      <button
+        (click)="onDelete()"
+        type="submit"
+        class="btn btn-primary col-lg-10 col-lg-offset-1 text-center">Remove
+      </button>
+    </div>
+  </div>
+    <div class="col-lg-8">
+      <h4>{{item?.itemName}}</h4>
+      <h5>${{item?.price}}.00</h5>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <hr>
+  </div>
+</div>

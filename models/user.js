@@ -7,7 +7,12 @@ var schema = new Schema({
     lastName: {type: String, required: true},
     password: {type: String, required: true},
     email: {type: String, required: true, unique: true},
-    username: {type: String, required: true, unique: true}
+    username: {type: String, required: true, unique: true},
+    cartItems: [{type: Schema.Types.ObjectId, ref: 'Cart'}],
+    boughtItems: [{type: Schema.Types.ObjectId, ref: 'Bought'}],
+    orders: [{type: Schema.Types.ObjectId, ref: 'Order'}]
+},{
+    usePushEach: true
 });
 
 schema.plugin(mongooseUniqueValidator);

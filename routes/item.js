@@ -91,4 +91,18 @@ router.post('/', function (req, res, next) {
     });
 });
 
+router.post('/:id', function (req, res, next){
+    Item.findByIdAndUpdate(req.params.id, {active:false}, function(err, user) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred. You could not buy the item',
+                error: err
+            });
+        }
+        res.status(200).json({
+            message: 'Item Bought'
+        });
+    });
+});
+
 module.exports = router;

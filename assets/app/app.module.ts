@@ -16,6 +16,8 @@ import {SuccessBannerService} from "./success-banner/success-banner.service";
 import {AuthModule} from "./auth/auth.module";
 import {SignupComponent} from "./auth/signup.component";
 import {ItemModule} from "./items/item.module";
+import {UserProfileService} from "./user-profile/user-profile.service";
+import {ItemInfoModule} from "./user-profile/item-info.module";
 
 @NgModule({
   declarations: [
@@ -34,9 +36,10 @@ import {ItemModule} from "./items/item.module";
     ReactiveFormsModule,
     HttpModule,
     ItemModule,
-    AuthModule
+    AuthModule,
+    ItemInfoModule
   ],
-  providers: [AuthService, ErrorService, SuccessBannerService],
+  providers: [AuthService, ErrorService, SuccessBannerService, UserProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

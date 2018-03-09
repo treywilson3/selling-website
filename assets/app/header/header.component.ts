@@ -8,13 +8,19 @@ import {AuthService} from "../auth/auth.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  private firstName: string;
+  private lastName: string;
+  private userFullName: string;
+
   constructor(private router: Router, private authService: AuthService) {
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   isLoggedIn() {
+    this.firstName = localStorage.getItem('userFirstName');
+    this.lastName = localStorage.getItem('userLastName');
+    this.userFullName = this.firstName + " " + this.lastName;
     return this.authService.isLoggedIn();
   }
 

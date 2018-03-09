@@ -1,14 +1,25 @@
-<div class="col-lg-8 col-lg-offset-2">
-  <h4 class="text-center">{{item?.itemName}}</h4>
+<div class="corners col-lg-12" style="margin-top: 60px">
+  <h4>{{item?.sellerUsername}}</h4>
   <hr>
-  <div class="text-center">
+  <div class="col-lg-8">
     <img src="{{item?.image}}">
-    <h1>{{item?.sellerUsername}}</h1>
+  </div>
+  <div class="col-lg-4">
+    <h3>{{item?.itemName}}</h3>
     <h4>${{item?.price}}</h4>
-    <p>{{item?.itemInformation}}</p>
     <button
+      (click)="addToCart()"
       type="submit"
-      class="btn btn-primary">Buy
+      class="btn btn-primary col-lg-4">Add to Cart
     </button>
+  </div>
+  <div class="col-lg-12">
+    <hr class="col-lg-4">
+  </div>
+  <div class="col-lg-12">
+    <div class="col-lg-4">
+      <h5>Description</h5>
+      <p>{{item?.itemInformation}}</p>
+    </div>
   </div>
 </div>

@@ -1,0 +1,8 @@
+<div class="thumbnail">
+  <a [routerLink]="['/items', item?.itemId]"><img src="{{item?.image}}"></a>
+  <div class="caption">
+    <p>{{item?.itemName}}</p>
+    <p class="text-muted">{{item?.sellerUsername}}</p>
+    <p>${{item?.price}}</p>
+  </div>
+</div>

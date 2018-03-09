@@ -1,0 +1,9 @@
+<div class="corners col-lg-8 col-lg-offset-2 text-center" *ngIf="orderItems?.length < 1" style="height: 300px">
+  <h4>You haven't ordered anything</h4>
+</div>
+<div *ngIf="orderItems?.length > 0">
+<app-order
+  [orderItem]="orderItem"
+  *ngFor="let orderItem of orderItems">
+</app-order>
+</div>

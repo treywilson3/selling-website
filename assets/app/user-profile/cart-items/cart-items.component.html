@@ -1,0 +1,25 @@
+<h1 class="col-lg-9" *ngIf="items?.length == 1" style="margin-top: 50px">{{items?.length}} item in your cart</h1>
+<h1 class="col-lg-9" *ngIf="items?.length > 1" style="margin-top: 50px">{{items?.length}} items in your cart</h1>
+<div class="corners col-lg-8 col-lg-offset-2 text-center" *ngIf="items?.length < 1" style="height: 300px; margin-top: 50px">
+  <h4>Your Cart is empty</h4>
+</div>
+<div class="corners col-lg-12" *ngIf="items?.length > 0">
+  <div class="col-lg-4 pull-right">
+    <div class="vertical col-lg-1"></div>
+    <div class="col-lg-10">
+      <button
+        (click)="toggleCheckout()"
+        type="submit"
+        class="btn btn-primary col-lg-12">Checkout
+      </button>
+    </div>
+  </div>
+    <app-cart-item
+      class="col-lg-8"
+      [item]="item"
+      *ngFor="let item of items">
+    </app-cart-item>
+</div>
+<app-checkout
+  (userFormEvent)="receiveUserForm($event)"
+  ></app-checkout>

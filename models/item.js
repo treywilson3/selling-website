@@ -9,6 +9,8 @@ var schema = new Schema({
     itemInformation: {type: String, required: true},
     image: {type: String, required: true},
     active: {type: Boolean, required: true}
+},{
+    usePushEach: true
 });
 
 module.exports = mongoose.model('Item', schema);
